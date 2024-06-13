@@ -9,7 +9,7 @@ class DPCP extends Controller{
 
         $data['judul'] = 'Data Calon Pensiun';
         $this->view('template/header', $data);
-        $this->view('tambahData/index');
+        $this->view('data_perorangan_calon_perorangan_calonpensiun/index');
         $this->view('template/footer');
     }
 
@@ -20,7 +20,7 @@ class DPCP extends Controller{
 
         $data['judul'] = 'Input Data Calon Pensiun';
         $this->view('template/header', $data);
-        $this->view('tambahData/input_dpcp');
+        $this->view('data_perorangan_calon_perorangan_calonpensiun/input_dpcp');
         $this->view('template/footer');
 
 
@@ -32,7 +32,7 @@ class DPCP extends Controller{
         $data['judul'] = 'Detail Data Calon Pensiun';
         $data['cp'] = $this->model('Calon_Pensiunan')->getcpById($nip);
         $this->view('template/header', $data);
-        $this->view('tambahData/detail', $data);
+        $this->view('data_perorangan_calon_perorangan_calonpensiun/detail', $data);
         $this->view('template/footer');
 
 
