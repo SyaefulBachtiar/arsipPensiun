@@ -1,6 +1,6 @@
 <?php 
 
-define('BASEURL', 'http://localhost/arsipPensiun/public');
+define('BASEURL', 'http://localhost/arsippensiun/public');
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
