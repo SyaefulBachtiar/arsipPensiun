@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $data['judul'] ?></title>
     <!-- Bootstrap CSS -->
-    <link href="http://localhost/arsipPensiun/public/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://localhost/arsipPensiun/public/bootstrap.min.js">
+    <link href="<?= BASEURL ?>/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= BASEURL ?>/bootstrap.min.js">
 
     <header class="bg-light py-3">
         <div class="container">

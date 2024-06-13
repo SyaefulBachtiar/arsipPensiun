@@ -26,17 +26,7 @@ class DPCP extends Controller{
 
     }
 
-    // detail caloon pensiun
-    public function detail($nip){
 
-        $data['judul'] = 'Detail Data Calon Pensiun';
-        $data['cp'] = $this->model('Calon_Pensiunan')->getcpById($nip);
-        $this->view('template/header', $data);
-        $this->view('data_perorangan_calon_perorangan_calonpensiun/detail', $data);
-        $this->view('template/footer');
-
-
-    }
 
       // tambah 
       public function read_saved_dpcp(){

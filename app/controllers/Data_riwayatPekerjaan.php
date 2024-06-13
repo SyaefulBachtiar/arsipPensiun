@@ -6,7 +6,7 @@ class data_riwayatPekerjaan extends Controller{
 
         $data['judul'] = 'Data Riwayat Pekerjaan';
         $this->view('template/header', $data);
-        $this->view('tambahData/data_riwayatPekerjaan');
+        $this->view('data_riwayat_pekerjaan/index');
         $this->view('template/footer');
     }
 

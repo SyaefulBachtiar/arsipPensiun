@@ -1,10 +1,6 @@
 
 <?php 
 
-if(isset($_POST)){
-    $nip;
-}
-
 ?>
 
 <div class="container d-flex align-items-center justify-content-center min-vh-100">
