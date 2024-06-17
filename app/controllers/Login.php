@@ -2,6 +2,8 @@
 
 class Login extends Controller{
 
+
+
     // menghungkan ke halaman login
     public function index(){
 
@@ -15,17 +17,21 @@ class Login extends Controller{
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $nip = $_POST['nip'];
             $password = $_POST['password'];
-
+            $nipcp = $this->model('Calon_Pensiunan')->getIdRelation($nip);
+;
             if($nip === 'admin' && $password === '123'){
                 Flasher::setFlash('berhasil!', 'Login sebagai admin', 'success');
                 header('Location:'. BASEURL . '/dashboard_admin');
                 exit;
-            }elseif ($nip === 'user' && $password === '123') {
+
+            }elseif ($nip === $nipcp['nip'] && $password === '123') {
                 Flasher::setFlash('berhasil!', 'Login sebagai calon pensiun', 'success');
-                header('Location:'. BASEURL . '/dashboard_calonpensiun');
+                header('Location:'. BASEURL . '/dashboard_calonpensiun/index/'. $nip);
+                exit;
+
             } else {
-                Flasher::setFlash('berhasil!', 'Login', 'danger');
-                header('Location:'. BASEURL . '/login' .'/index');
+                Flasher::setFlash('gagal!', 'Login', 'danger');
+                header('Location:'. BASEURL . '/login');
             }
             
         }

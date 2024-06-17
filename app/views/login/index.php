@@ -1,4 +1,8 @@
-
+<div class="row justify-content-center align-items-center">
+    <div class="col-lg-6 ">
+        <?php Flasher::flash_login(); ?>
+    </div>
+</div>
 
 <div class="container d-flex align-items-center justify-content-center min-vh-100">
     <div class="row justify-content-center w-100">

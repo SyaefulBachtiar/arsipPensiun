@@ -24,25 +24,31 @@ class Calon_Pensiunan {
     }
 
     // get id
-    public function getcpById($nip){
-        $this->db->query("SELECT * FROM tbl_data_cp WHERE nip=:nip");
+ 
+  
 
-        $this->db->bind(':nip', $nip);
-        return $this->db->single();
-    }
-    public function getIdak($id_anggota_keluarga){
-        $this->db->query("SELECT * FROM tbl_daftarkeluaga WHERE id_anggota_keluarga=:id_anggota_keluarga");
-
-        $this->db->bind(':id_anggota_keluarga', $id_anggota_keluarga);
-        return $this->db->single();
-    }
-    public function getIdrp($id_riwayatpkerjaan){
-        $this->db->query("SELECT * FROM tbl_riwayatpekerjaan WHERE id_riwayatpkerjaan=:id_riwayatpkerjaan");
-
-        $this->db->bind(':id_riwayatpkerjaan', $id_riwayatpkerjaan);
-        return $this->db->single();
-    }
-     
+    
+        // Mengambil data calon pensiunan berdasarkan nip
+        public function getIdRelation($nip){
+            $this->db->query("SELECT * FROM tbl_data_cp WHERE nip= :nip");
+            $this->db->bind(':nip', $nip);
+            $calon_pensiun = $this->db->single();
+            
+            if($calon_pensiun){
+                // Mengambil daftar keluarga berdasarkan nip
+                $this->db->query("SELECT * FROM tbl_daftarkeluarga WHERE nip_terkait = :nip");
+                $this->db->bind(':nip', $nip);
+                $calon_pensiun['daftar_keluarga'] = $this->db->resultSet();
+    
+                // Mengambil riwayat pekerjaan berdasarkan nip
+                $this->db->query("SELECT * FROM tbl_riwayatpekerjaan WHERE nip_terkait = :nip");
+                $this->db->bind(':nip', $nip);
+                $calon_pensiun['riwayat_pekerjaan'] = $this->db->resultSet();
+            }
+    
+            return $calon_pensiun;
+        }
+    
 
 
 //    hapus

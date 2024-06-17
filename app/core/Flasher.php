@@ -21,7 +21,7 @@ class Flasher {
         }
     }
 
-    public static function flash2(){
+    public static function flash_login(){
         
         if(isset($_SESSION['flash'])){
            echo '<div class="alert alert-'. $_SESSION['flash']['tipe'] . ' alert-dismissible fade show" role="alert">

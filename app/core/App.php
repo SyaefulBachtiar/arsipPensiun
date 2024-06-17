@@ -2,7 +2,7 @@
 
 class App {
 
-    protected $controller = 'login';
+    protected $controller = 'Login';
     protected $method = 'index';
     protected $params = [];
 
@@ -16,7 +16,7 @@ class App {
             unset($url[0]);
         }
 
-        require_once '../app/controllers/' .$this->controller . '.php';
+        require_once '../app/controllers/' . $this->controller . '.php';
         $this->controller = new $this->controller;
 
 

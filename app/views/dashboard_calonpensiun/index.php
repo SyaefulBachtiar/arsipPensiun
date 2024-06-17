@@ -1,11 +1,12 @@
 <div class="row justify-content-center align-items-center">
     <div class="col-lg-6 ">
-        <?php Flasher::flash2(); ?>
+        <?php Flasher::flash_login(); ?>
     </div>
 </div>
 
+
 <div class="container my-4">
-    <h2 class="text-center">Syaeful</h2>
+    <h2 class="text-center"><?= isset($data['cp']['nama']) ? htmlspecialchars($data['cp']['nama']) : 'Nama Tidak Tersedia'; ?></h2>
     <div class="row justify-content-center align-items-center">
         <div class="col-md-8">
             <div class="progress">
@@ -74,9 +75,9 @@
                     <!-- Example Data Row -->
                     <?php if(isset($data['cp'])): ?>
                     <tr>
-                        <td><?= $data['cp']['nama']; ?></td>
-                        <td><?= $data['cp']['nip']; ?></td>
-                        <td><?= $data['cp']['unit_organisasi']; ?></td>
+                        <td><?= htmlspecialchars($data['cp']['nama']); ?></td>
+                        <td><?= htmlspecialchars($data['cp']['nip']); ?></td>
+                        <td><?= htmlspecialchars($data['cp']['unit_organisasi']); ?></td>
                         <td>
                             <a href="<?= BASEURL; ?>/detail/<?= $data['cp']['nip']; ?>"><button class="btn btn-info btn-sm">Lihat</button></a>
                             <a href="<?= BASEURL ?>/dpcp/clear_dpcp/<?= $data['cp']['nip']; ?>"><button class="btn btn-success btn-sm" onclick="return confirm('yakin?');">Arsip</button></a>
@@ -115,17 +116,19 @@
                 </thead>
                 <tbody>
                     <!-- Example Data Row -->
-                    <?php if(isset($data['dk'])): ?>
+                    <?php if(isset($data['cp']['daftar_keluarga'])): ?>
+                    <?php foreach($data['cp']['daftar_keluarga'] as $keluarga): ?>
                     <tr>
-                        <td><?= htmlspecialchars($data['dk']['id_anggota_keluarga']); ?></td>
-                        <td><?= htmlspecialchars($data['dk']['nip_terkait']); ?></td>
-                        <td><?= htmlspecialchars($data['dk']['nama']); ?></td>
-                        <td><?= htmlspecialchars($data['dk']['hubungan_keluarga']); ?></td>
-                        <td><?= htmlspecialchars($data['dk']['tanggal_lahir']); ?></td>
-                        <td><?= htmlspecialchars($data['dk']['pekerjaan_sekolah']); ?></td>
-                        <td><?= htmlspecialchars($data['dk']['tanggla_perkawinan']); ?></td>
-                        <td><?= htmlspecialchars($data['dk']['keterangan']); ?></td>
+                        <td><?= htmlspecialchars($keluarga['id_anggota_keluarga']); ?></td>
+                        <td><?= htmlspecialchars($keluarga['nip_terkait']); ?></td>
+                        <td><?= htmlspecialchars($keluarga['nama']); ?></td>
+                        <td><?= htmlspecialchars($keluarga['hubungan_keluarga']); ?></td>
+                        <td><?= htmlspecialchars($keluarga['tanggal_lahir']); ?></td>
+                        <td><?= htmlspecialchars($keluarga['pekerjaan_sekolah']); ?></td>
+                        <td><?= htmlspecialchars($keluarga['tanggla_perkawinan']); ?></td>
+                        <td><?= htmlspecialchars($keluarga['keterangan']); ?></td>
                     </tr>
+                    <?php endforeach; ?>
                     <?php endif; ?>
                 </tbody>
             </table>
@@ -161,22 +164,29 @@
                 </thead>
                 <tbody>
                     <!-- Example Data Row -->
-                    <?php if(isset($data['rp'])): ?>
+                    <?php if(isset($data['cp']['riwayat_pekerjaan'])): ?>
+                    <?php foreach($data['cp']['riwayat_pekerjaan'] as $pekerjaan): ?>
                     <tr>
-                        <td><?= htmlspecialchars($data['rp']['id_riwayatpkerjaan']); ?></td>
-                        <td><?= htmlspecialchars($data['rp']['nip_terkait']); ?></td>
-                        <td><?= htmlspecialchars($data['rp']['uraian_riwayatpekerjaan']); ?></td>
-                        <td><?= htmlspecialchars($data['rp']['mulai']); ?></td>
-                        <td><?= htmlspecialchars($data['rp']['sampai']); ?></td>
-                        <td><?= htmlspecialchars($data['rp']['pangkat_gol_ruang']); ?></td>
-                        <td><?= htmlspecialchars($data['rp']['gaji']); ?></td>
-                        <td><?= htmlspecialchars($data['rp']['sk_pejabat']); ?></td>
-                        <td><?= htmlspecialchars($data['rp']['sk_nomor']); ?></td>
-                        <td><?= htmlspecialchars($data['rp']['sk_tanggal']); ?></td>
+                        <td><?= htmlspecialchars($pekerjaan['id_riwayatpkerjaan']); ?></td>
+                        <td><?= htmlspecialchars($pekerjaan['nip_terkait']); ?></td>
+                        <td><?= htmlspecialchars($pekerjaan['uraian_riwayatpekerjaan']); ?></td>
+                        <td><?= htmlspecialchars($pekerjaan['mulai']); ?></td>
+                        <td><?= htmlspecialchars($pekerjaan['sampai']); ?></td>
+                        <td><?= htmlspecialchars($pekerjaan['pangkat_gol_ruang']); ?></td>
+                        <td><?= htmlspecialchars($pekerjaan['gaji']); ?></td>
+                        <td><?= htmlspecialchars($pekerjaan['sk_pejabat']); ?></td>
+                        <td><?= htmlspecialchars($pekerjaan['sk_nomor']); ?></td>
+                        <td><?= htmlspecialchars($pekerjaan['sk_tanggla']); ?></td>
                     </tr>
+                    <?php endforeach; ?>
                     <?php endif; ?>
                 </tbody>
             </table>
         </div>
     </div>
-</div>
+</tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+                    </div>

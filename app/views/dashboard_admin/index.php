@@ -1,9 +1,8 @@
 <div class="row justify-content-center align-items-center">
     <div class="col-lg-6 ">
-        <?php Flasher::flash2(); ?>
+        <?php Flasher::flash_login(); ?>
     </div>
 </div>
-  
   <!-- Main Content -->
   <div class="container my-5">
         <h1 class="mb-4">Dashboard/Admin</h1>
