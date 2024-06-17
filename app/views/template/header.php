@@ -1,6 +1,6 @@
 
 
-<?php if($data['judul'] != 'Login'):?>
+<?php if($data['judul'] != 'Login' && $data['judul'] != 'Buat Akun'):?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,8 +1,8 @@
 <?php 
 
-class data_riwayatPekerjaan extends Controller{
+class Data_riwayatPekerjaan extends Controller{
 
-    public function data_riwayatPekerjaan() {
+    public function index() {
 
         $data['judul'] = 'Data Riwayat Pekerjaan';
         $this->view('template/header', $data);
@@ -14,7 +14,12 @@ class data_riwayatPekerjaan extends Controller{
 
     public function read_saved_rp(){
         if( $this->model('Calon_Pensiunan')->input_riwayatPekerjaan($_POST) > 0){
-            header('Location:'. BASEURL . '/dashboard');
+            Flasher::setFlash('berhasil!', 'ditambahkan', 'success');
+            header('Location:'. BASEURL . '/dashboard_calonpensiun');
+            exit;
+        }else{
+            Flasher::setFlash('gagal!', 'ditambahkan', 'danger');
+            header('Location:'. BASEURL . '/dashboard_calonpensiun');
             exit;
         }
     }

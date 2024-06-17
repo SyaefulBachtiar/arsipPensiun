@@ -1,0 +1,182 @@
+<div class="row justify-content-center align-items-center">
+    <div class="col-lg-6 ">
+        <?php Flasher::flash2(); ?>
+    </div>
+</div>
+
+<div class="container my-4">
+    <h2 class="text-center">Syaeful</h2>
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-8">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+                <div class="step <?php if ($activeStep == 'data_dasar') echo 'active'; ?>">
+                    <div class="step-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="step <?php if ($activeStep == 'data_terkait_pensiun') echo 'active'; ?>">
+                    <div class="step-icon">2</div>
+                    <div class="step-text">Data Terkait Pensiun</div>
+                </div>
+                <div class="step <?php if ($activeStep == 'daftar_keluarga') echo 'active'; ?>">
+                    <div class="step-icon">3</div>
+                    <div class="step-text">Daftar Keluarga</div>
+                </div>
+                <div class="step <?php if ($activeStep == 'riwayat_pekerjaan') echo 'active'; ?>">
+                    <div class="step-icon">4</div>
+                    <div class="step-text">Riwayat Pekerjaan</div>
+                </div>
+                <div class="step <?php if ($activeStep == 'selesai') echo 'active'; ?>">
+                    <div class="step-icon"></div>
+                    <div class="step-text">Selesai</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list-group mt-5">
+        <a href="<?= BASEURL ?>/dpcp" class="list-group-item list-group-item-action <?php if ($status == 'DPCPselesai') echo 'active'; ?>">
+            Data DPCP
+        </a>
+        <a href="<?= BASEURL ?>/data_daftarKeluarga" class="list-group-item list-group-item-action <?php if ($status == 'DAKselesai') echo 'active'; ?>">
+            Daftar Keluarga
+        </a>
+        <a href="<?= BASEURL ?>/Data_riwayatPekerjaan" class="list-group-item list-group-item-action <?php if ($activeStep == 'riwayat_pekerjaan') echo 'active'; ?>">
+            Riwayat Pekerjaan
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <h1>DPCP</h1>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search data...">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nama</th>
+                        <th>NIP</th>
+                        <th>Unit Organisasi</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example Data Row -->
+                    <?php if(isset($data['cp'])): ?>
+                    <tr>
+                        <td><?= $data['cp']['nama']; ?></td>
+                        <td><?= $data['cp']['nip']; ?></td>
+                        <td><?= $data['cp']['unit_organisasi']; ?></td>
+                        <td>
+                            <a href="<?= BASEURL; ?>/detail/<?= $data['cp']['nip']; ?>"><button class="btn btn-info btn-sm">Lihat</button></a>
+                            <a href="<?= BASEURL ?>/dpcp/clear_dpcp/<?= $data['cp']['nip']; ?>"><button class="btn btn-success btn-sm" onclick="return confirm('yakin?');">Arsip</button></a>
+                        </td>
+                    </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <h1>Daftar Keluarga</h1>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search data...">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID Anggota Keluarga</th>
+                        <th>NIP Terkait</th>
+                        <th>Nama</th>
+                        <th>Hubungan Keluarga</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Pekerjaan/Sekolah</th>
+                        <th>Tanggal Perkawinan</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example Data Row -->
+                    <?php if(isset($data['dk'])): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($data['dk']['id_anggota_keluarga']); ?></td>
+                        <td><?= htmlspecialchars($data['dk']['nip_terkait']); ?></td>
+                        <td><?= htmlspecialchars($data['dk']['nama']); ?></td>
+                        <td><?= htmlspecialchars($data['dk']['hubungan_keluarga']); ?></td>
+                        <td><?= htmlspecialchars($data['dk']['tanggal_lahir']); ?></td>
+                        <td><?= htmlspecialchars($data['dk']['pekerjaan_sekolah']); ?></td>
+                        <td><?= htmlspecialchars($data['dk']['tanggla_perkawinan']); ?></td>
+                        <td><?= htmlspecialchars($data['dk']['keterangan']); ?></td>
+                    </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <h1>Riwayat Pekerjaan</h1>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search data...">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID Riwayat Pekerjaan</th>
+                        <th>NIP Terkait</th>
+                        <th>Uraian Riwayat Pekerjaan</th>
+                        <th>Mulai</th>
+                        <th>Sampai</th>
+                        <th>Pangkat/Gol/Ruang</th>
+                        <th>Gaji</th>
+                        <th>SK Pejabat</th>
+                        <th>SK Nomor</th>
+                        <th>SK Tanggal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example Data Row -->
+                    <?php if(isset($data['rp'])): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($data['rp']['id_riwayatpkerjaan']); ?></td>
+                        <td><?= htmlspecialchars($data['rp']['nip_terkait']); ?></td>
+                        <td><?= htmlspecialchars($data['rp']['uraian_riwayatpekerjaan']); ?></td>
+                        <td><?= htmlspecialchars($data['rp']['mulai']); ?></td>
+                        <td><?= htmlspecialchars($data['rp']['sampai']); ?></td>
+                        <td><?= htmlspecialchars($data['rp']['pangkat_gol_ruang']); ?></td>
+                        <td><?= htmlspecialchars($data['rp']['gaji']); ?></td>
+                        <td><?= htmlspecialchars($data['rp']['sk_pejabat']); ?></td>
+                        <td><?= htmlspecialchars($data['rp']['sk_nomor']); ?></td>
+                        <td><?= htmlspecialchars($data['rp']['sk_tanggal']); ?></td>
+                    </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -14,14 +14,36 @@ class Calon_Pensiunan {
         $this->db->query('SELECT * FROM tbl_data_cp');
         return $this->db->resultSet();
     }
+    public function getAll_daftarkeluarga(){
+        $this->db->query('SELECT * FROM tbl_daftarkeluarga');
+        return $this->db->resultSet();
+    }
+    public function getAll_riwayatPekerjaan(){
+        $this->db->query('SELECT * FROM tbl_riwayatpekerjaan');
+        return $this->db->resultSet();
+    }
 
     // get id
     public function getcpById($nip){
         $this->db->query("SELECT * FROM tbl_data_cp WHERE nip=:nip");
 
-        $this->db->bind('nip', $nip);
+        $this->db->bind(':nip', $nip);
         return $this->db->single();
     }
+    public function getIdak($id_anggota_keluarga){
+        $this->db->query("SELECT * FROM tbl_daftarkeluaga WHERE id_anggota_keluarga=:id_anggota_keluarga");
+
+        $this->db->bind(':id_anggota_keluarga', $id_anggota_keluarga);
+        return $this->db->single();
+    }
+    public function getIdrp($id_riwayatpkerjaan){
+        $this->db->query("SELECT * FROM tbl_riwayatpekerjaan WHERE id_riwayatpkerjaan=:id_riwayatpkerjaan");
+
+        $this->db->bind(':id_riwayatpkerjaan', $id_riwayatpkerjaan);
+        return $this->db->single();
+    }
+     
+
 
 //    hapus
     public function hapusDatacp($nip){
@@ -34,7 +56,7 @@ class Calon_Pensiunan {
         return $this->db->rowCount();
     }
 
-    // Tambah input_dpcp
+    // input_dpcp
     public function input_dpcp($data){
         $query = "INSERT INTO tbl_data_cp VALUES (:nip, :nama, :lahir_tempat, :lahir_tgl, :gender, :status_kawin, :pendidikan_jenjang,:pendidikan_jurusan, :pendidikan_tahunlulus, :no_karpeg, :jabatan, :pangkat_gol_ruang, :tmt, :unit_organisasi,:masa_kerja_golongan_dlm_bulan, :masa_kerja_golongan_tgl, :masa_kerja_pensiun_dlm_bulan, :masa_kerja_pensiun_tgl,:masa_kerja_sebelum_pns_start, :masa_kerja_sebelum_pns_end, :gaji_pokok_terakhir, :tanggal_masuk_pns)";
 
@@ -67,6 +89,7 @@ class Calon_Pensiunan {
         return $this->db->rowCount();
     }
 
+    // input riwayat pekerjaan
     public function input_riwayatPekerjaan ($data){
         $query = "INSERT INTO tbl_riwayatpekerjaan VALUES (:id_riwayatpkerjaan, :nip_terkait, :uraian_riwayatpekerjaan, :mulai, :sampai, :pangkat_gol_ruang, :gaji, :sk_pejabat, :sk_nomor, :sk_tanggla)";
 
@@ -89,6 +112,7 @@ class Calon_Pensiunan {
         
     }
 
+    // input daftar keluarga
     public function input_daftarKeluarga($data){
 
         $query = "INSERT INTO tbl_daftarkeluarga VALUES (:id_anggota_keluarga, :nip_terkait, :nama, :hubungan_keluarga, :tanggal_lahir, :pekerjaan_sekolah, :tanggla_perkawinan, :keterangan)";
@@ -109,4 +133,11 @@ class Calon_Pensiunan {
 
 
     }
+
+
+
+
+
+
+
 }

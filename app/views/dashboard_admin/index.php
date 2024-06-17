@@ -1,3 +1,9 @@
+<div class="row justify-content-center align-items-center">
+    <div class="col-lg-6 ">
+        <?php Flasher::flash2(); ?>
+    </div>
+</div>
+  
   <!-- Main Content -->
   <div class="container my-5">
         <h1 class="mb-4">Dashboard/Admin</h1>
@@ -7,9 +13,6 @@
                 <input type="text" class="form-control" placeholder="Search data...">
                 <button class="btn btn-primary" type="button">Search</button>
                 </div>
-            </div>
-            <div class="col-md-6 text-end">
-                <a href="<?= BASEURL; ?>/tambahdata_baru"><button class="btn btn-primary">Tambah Data Baru</button></a>
             </div>
         </div>
         
@@ -33,7 +36,7 @@
                         <td><?= $cp['unit_organisasi']; ?></td>
                         <td>
                             <a href="<?= BASEURL; ?>/detail/<?= $cp['nip']; ?>"><button class="btn btn-info btn-sm">Lihat</button></a>
-                            <a href="<?= BASEURL ?>/dpcp/clear_dpcp/<?= $cp['nip']; ?>"><button class="btn btn-danger btn-sm" onclick="return confirm('yakin?');">Hapus</button></a>
+                            <a href="<?= BASEURL ?>/dpcp/clear_dpcp/<?= $cp['nip']; ?>"><button class="btn btn-success btn-sm" onclick="return confirm('yakin?');">Arsip</button></a>
                         </td>
                     </tr>
                         <?php endforeach ?>

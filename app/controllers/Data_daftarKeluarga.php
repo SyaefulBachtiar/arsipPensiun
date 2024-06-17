@@ -1,18 +1,25 @@
 <?php 
 
-class data_daftarKeluarga extends Controller {
-    public function input_daftarKeluarga(){
+class Data_daftarKeluarga extends Controller {
+
+
+    public function index(){
 
         $data['judul'] = 'Input Daftar Keluarga';
         $this->view('template/header', $data);
-        $this->view('tambahData/input_daftarKeluarga');
+        $this->view('daftar_anggota_keluarga/index');
         $this->view('template/footer');
     } 
 
     public function read_saved_daftarKeluarga(){
         if( $this->model('Calon_Pensiunan')->input_daftarKeluarga($_POST) > 0){
-            header('Location:'. BASEURL . '/dashboard');
-            exit;
+                Flasher::setFlash('berhasil!', 'ditambahkan', 'success');
+                header('Location:'. BASEURL . '/dashboard_calonpensiun');
+                exit;
+            }else{
+                Flasher::setFlash('gagal!', 'ditambahkan', 'danger');
+                header('Location:'. BASEURL . '/dashboard_calonpensiun');
+                exit;
+            }
         }
-    }
 }
