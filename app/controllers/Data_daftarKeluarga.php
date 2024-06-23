@@ -4,7 +4,6 @@ class Data_daftarKeluarga extends Controller {
 
 
     public function index(){
-
         $data['judul'] = 'Input Daftar Keluarga';
         $this->view('template/header', $data);
         $this->view('daftar_anggota_keluarga/index');
