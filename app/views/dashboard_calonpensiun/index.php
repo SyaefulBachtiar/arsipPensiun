@@ -79,8 +79,8 @@
                         <td><?= htmlspecialchars($data['cp']['nip']); ?></td>
                         <td><?= htmlspecialchars($data['cp']['unit_organisasi']); ?></td>
                         <td>
-                            <a href="<?= BASEURL; ?>/Detail/<?= $data['cp']['nip']; ?>"><button class="btn btn-info btn-sm">Lihat</button></a>
-                            <a href="<?= BASEURL ?>/dpcp/clear_dpcp/<?= $data['cp']['nip']; ?>"><button class="btn btn-success btn-sm" onclick="return confirm('yakin?');">Arsip</button></a>
+                        
+                            <a href="#"><button class="btn btn-info btn-sm">Selesai</button></a>
                         </td>
                     </tr>
                     <?php endif; ?>
@@ -108,6 +108,7 @@
                         <th>Pekerjaan/Sekolah</th>
                         <th>Tanggal Perkawinan</th>
                         <th>Keterangan</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -123,6 +124,9 @@
                         <td><?= htmlspecialchars($keluarga['pekerjaan_sekolah']); ?></td>
                         <td><?= htmlspecialchars($keluarga['tanggla_perkawinan']); ?></td>
                         <td><?= htmlspecialchars($keluarga['keterangan']); ?></td>
+                        <td>
+                        <a href="#"><button class="btn btn-info btn-sm">Selesai</button></a>
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                     <?php endif; ?>
@@ -169,6 +173,9 @@
                         <td><?= htmlspecialchars($pekerjaan['sk_pejabat']); ?></td>
                         <td><?= htmlspecialchars($pekerjaan['sk_nomor']); ?></td>
                         <td><?= htmlspecialchars($pekerjaan['sk_tanggla']); ?></td>
+                        <td>
+                        <a href="#"><button class="btn btn-info btn-sm">Selesai</button></a>
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                     <?php endif; ?>
