@@ -16,11 +16,11 @@ class Data_riwayatPekerjaan extends Controller{
             $nip = $this->model('Calon_Pensiunan')->getIdRelation($nip);
         if( $this->model('Calon_Pensiunan')->input_riwayatPekerjaan($_POST) > 0){
             Flasher::setFlash('berhasil!', 'ditambahkan', 'success');
-            header('Location:'. BASEURL . '/Dashboard_calonpensiun/index'. $nip);
+            header('Location:'. BASEURL . '/Dashboard_calonpensiun/index/'. $nip);
             exit;
         }else{
             Flasher::setFlash('gagal!', 'ditambahkan', 'danger');
-            header('Location:'. BASEURL . '/Dashboard_calonpensiun/index'. $nip);
+            header('Location:'. BASEURL . '/Dashboard_calonpensiun/index/'. $nip);
             exit;
         }
     }
