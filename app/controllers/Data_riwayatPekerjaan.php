@@ -15,8 +15,7 @@ class Data_riwayatPekerjaan extends Controller{
     public function read_saved_rp($nip){
         if( $this->model('Calon_Pensiunan')->input_riwayatPekerjaan($_POST) > 0){
             Flasher::setFlash('berhasil!', 'ditambahkan', 'success');
-            $data = $this->model('Calon_Pensiunan')->getIdRelation($nip);
-            header('Location:'. BASEURL . '/Dashboard_calonpensiun', $data);
+            header('Location:'. BASEURL . '/Dashboard_calonpensiun');
             exit;
         }else{
             Flasher::setFlash('gagal!', 'ditambahkan', 'danger');
