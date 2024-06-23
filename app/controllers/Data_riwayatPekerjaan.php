@@ -19,7 +19,7 @@ class Data_riwayatPekerjaan extends Controller{
             exit;
         }else{
             Flasher::setFlash('gagal!', 'ditambahkan', 'danger');
-            header('Location:'. BASEURL . '/dashboard_calonpensiun');
+            header('Location:'. BASEURL . '/Dashboard_calonpensiun');
             exit;
         }
     }

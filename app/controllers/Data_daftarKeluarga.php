@@ -12,7 +12,8 @@ class Data_daftarKeluarga extends Controller {
     } 
 
     public function read_saved_daftarKeluarga(){
-        if( $this->model('Calon_Pensiunan')->input_daftarKeluarga($_POST) > 0){
+        try {
+            if( $this->model('Calon_Pensiunan')->input_daftarKeluarga($_POST) > 0){
                 Flasher::setFlash('berhasil!', 'ditambahkan', 'success');
                 header('Location:'. BASEURL . '/Dashboard_calonpensiun');
                 exit;
@@ -21,5 +22,10 @@ class Data_daftarKeluarga extends Controller {
                 header('Location:'. BASEURL . '/Dashboard_calonpensiun');
                 exit;
             }
+        }catch(PDOException $e){
+            Flasher::setFlash('Kesalahan:', $e->getMessage(), 'danger');
+            header('Location: ' . BASEURL . '/Dashboard_calonpensiun');
+            exit;
+        }
         }
 }
