@@ -34,13 +34,13 @@
         </div>
         <div class="list-group mt-5">
 
-            <p  class="list-group-item list-group-item-action" <?php if ($status == 'DAKselesai') echo 'active'; ?>>
+            <p  class="list-group-item list-group-item-action">
                 DPCP
             </p>
-            <p  class="list-group-item list-group-item-action" <?php if ($status == 'DAKselesai') echo 'active'; ?>>
+            <p  class="list-group-item list-group-item-action">
                 Daftar Keluarga
             </p>
-            <p  class="list-group-item list-group-item-action" <?php if ($status == 'DAKselesai') echo 'active'; ?>>
+            <p  class="list-group-item list-group-item-action">
                 Riwayat Pekerjaan
             </p>
         </div>
