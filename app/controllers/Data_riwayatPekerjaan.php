@@ -2,10 +2,11 @@
 
 class Data_riwayatPekerjaan extends Controller{
 
-    public function index() {
+    public function index($nip) {
 
         $data['judul'] = 'Data Riwayat Pekerjaan';
         $this->view('template/header', $data);
+        $data['cp']    = $this->model('Calon_Pensiunan')->getIdRelation($nip);
         $this->view('data_riwayat_pekerjaan/index');
         $this->view('template/footer');
     }
