@@ -1,6 +1,6 @@
 <?php 
 
-define('BASEURL', 'https://arsippensiun.horizonu.my.id/public');
+define('BASEURL', 'https://arsippensiun.horizonu.my.id');
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'u330845453_root');
