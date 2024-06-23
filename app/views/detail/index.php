@@ -34,14 +34,14 @@
         </div>
         <div class="list-group mt-5">
 
-            <a href="<?= BASEURL ?>/DPCP/<?= $data['cp']['nip'] ?>" class="list-group-item list-group-item-action <?php if ($status == 'DPCPselesai') echo 'active'; ?>">
-                Data DPCP
-            </a>
-            <a href="<?= BASEURL ?>/Data_daftarKeluarga/<?= $data['cp']['nip'] ?>" class="list-group-item list-group-item-action <?php if ($status == 'DAKselesai') echo 'active'; ?>">
+            <p  class="list-group-item list-group-item-action" <?php if ($status == 'DAKselesai') echo 'active'; ?>>
+                DPCP
+            </p>
+            <p  class="list-group-item list-group-item-action" <?php if ($status == 'DAKselesai') echo 'active'; ?>>
                 Daftar Keluarga
-            </a>
-            <a href="<?= BASEURL ?>/Data_riwayatPekerjaan/<?= $data['cp']['nip'] ?>" class="list-group-item list-group-item-action <?php if ($activeStep == 'riwayat_pekerjaan') echo 'active'; ?>">
+            </p>
+            <p  class="list-group-item list-group-item-action" <?php if ($status == 'DAKselesai') echo 'active'; ?>>
                 Riwayat Pekerjaan
-            </a>
+            </p>
         </div>
     </div>
