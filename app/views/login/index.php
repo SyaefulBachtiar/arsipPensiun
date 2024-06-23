@@ -4,13 +4,14 @@
     </div>
 </div>
 
+
 <div class="container d-flex align-items-center justify-content-center min-vh-100">
     <div class="row justify-content-center w-100">
         <div class="col-12 col-sm-8 col-md-6 col-lg-4">
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h4 class="card-title pb-5 pt-2 mb-3 text-center">Login Arsippensiun Dinas PUPR</h4>
-                    <form action="<?= BASEURL ?>/login/proses" method="POST">
+                    <form action="<?= BASEURL ?>/Login/proses" method="POST">
                         <div class="mb-3">
                             <label for="nip" class="form-label">Masukan NIP</label>
                             <input type="text" class="form-control" id="nip" placeholder="Masukan NIP" name="nip">
@@ -22,7 +23,7 @@
                         <button type="submit" name="submit" class="btn btn-primary w-100">Login</button>
                     </form>
                     <br>
-                    <a href="<?= BASEURL ?>/buat_akun">buat akun baru?</a>
+                    <a href="<?= BASEURL ?>/Buat_akun">buat akun baru?</a>
                 </div>
             </div>
         </div>

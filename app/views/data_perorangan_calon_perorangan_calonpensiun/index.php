@@ -2,7 +2,7 @@
 
 <div class="container my-5">
         <h1 class="mb-4">Tambah Data Calon Pensiun</h1>
-        <form action="<?= BASEURL ?>/dpcp/read_saved_dpcp" method="POST">
+        <form action="<?= BASEURL ?>/DPCP/read_saved_dpcp" method="POST">
             <div class="mb-3">
                 <label for="nip" class="form-label">NIP</label>
                 <input type="text" class="form-control" id="nip" name="nip" required>

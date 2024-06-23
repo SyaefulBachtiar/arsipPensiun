@@ -38,10 +38,10 @@
         </div>
     </div>
     <div class="list-group mt-5">
-        <a href="<?= BASEURL ?>/dpcp" class="list-group-item list-group-item-action <?php if ($status == 'DPCPselesai') echo 'active'; ?>">
+        <a href="<?= BASEURL ?>/DPCP" class="list-group-item list-group-item-action <?php if ($status == 'DPCPselesai') echo 'active'; ?>">
             Data DPCP
         </a>
-        <a href="<?= BASEURL ?>/data_daftarKeluarga" class="list-group-item list-group-item-action <?php if ($status == 'DAKselesai') echo 'active'; ?>">
+        <a href="<?= BASEURL ?>/Data_daftarKeluarga" class="list-group-item list-group-item-action <?php if ($status == 'DAKselesai') echo 'active'; ?>">
             Daftar Keluarga
         </a>
         <a href="<?= BASEURL ?>/Data_riwayatPekerjaan" class="list-group-item list-group-item-action <?php if ($activeStep == 'riwayat_pekerjaan') echo 'active'; ?>">
@@ -79,7 +79,7 @@
                         <td><?= htmlspecialchars($data['cp']['nip']); ?></td>
                         <td><?= htmlspecialchars($data['cp']['unit_organisasi']); ?></td>
                         <td>
-                            <a href="<?= BASEURL; ?>/detail/<?= $data['cp']['nip']; ?>"><button class="btn btn-info btn-sm">Lihat</button></a>
+                            <a href="<?= BASEURL; ?>/Detail/<?= $data['cp']['nip']; ?>"><button class="btn btn-info btn-sm">Lihat</button></a>
                             <a href="<?= BASEURL ?>/dpcp/clear_dpcp/<?= $data['cp']['nip']; ?>"><button class="btn btn-success btn-sm" onclick="return confirm('yakin?');">Arsip</button></a>
                         </td>
                     </tr>
@@ -93,10 +93,6 @@
         <h1>Daftar Keluarga</h1>
         <div class="row mb-3">
             <div class="col-md-6">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search data...">
-                    <button class="btn btn-primary" type="button">Search</button>
-                </div>
             </div>
         </div>
 
@@ -139,10 +135,6 @@
         <h1>Riwayat Pekerjaan</h1>
         <div class="row mb-3">
             <div class="col-md-6">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search data...">
-                    <button class="btn btn-primary" type="button">Search</button>
-                </div>
             </div>
         </div>
 

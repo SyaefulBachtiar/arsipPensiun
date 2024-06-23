@@ -34,7 +34,7 @@
         </div>
         <div class="list-group mt-5">
 
-            <a href="<?= BASEURL ?>/dpcp/<?= $data['cp']['nip'] ?>" class="list-group-item list-group-item-action <?php if ($status == 'DPCPselesai') echo 'active'; ?>">
+            <a href="<?= BASEURL ?>/DPCP/<?= $data['cp']['nip'] ?>" class="list-group-item list-group-item-action <?php if ($status == 'DPCPselesai') echo 'active'; ?>">
                 Data DPCP
             </a>
             <a href="<?= BASEURL ?>/Data_daftarKeluarga/<?= $data['cp']['nip'] ?>" class="list-group-item list-group-item-action <?php if ($status == 'DAKselesai') echo 'active'; ?>">

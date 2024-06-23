@@ -2,7 +2,7 @@
 
 <div class="container">
     <h1>Form Daftar Keluarga</h1>
-    <form action="<?= BASEURL ?>/data_daftarkeluarga/read_saved_daftarKeluarga" method="POST">
+    <form action="<?= BASEURL ?>/Data_daftarKeluarga/read_saved_daftarKeluarga" method="POST">
       <div class="row mb-3">
         <div class="col-md-6">
           <label for="id_anggota_keluarga" class="form-label">ID Anggota Keluarga</label>

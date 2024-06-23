@@ -34,7 +34,7 @@
                         <td><?= $cp['nip']; ?></td>
                         <td><?= $cp['unit_organisasi']; ?></td>
                         <td>
-                            <a href="<?= BASEURL; ?>/detail/<?= $cp['nip']; ?>"><button class="btn btn-info btn-sm">Lihat</button></a>
+                            <a href="<?= BASEURL; ?>/Detail/<?= $cp['nip']; ?>"><button class="btn btn-info btn-sm">Lihat</button></a>
                             <a href="<?= BASEURL ?>/dpcp/clear_dpcp/<?= $cp['nip']; ?>"><button class="btn btn-success btn-sm" onclick="return confirm('yakin?');">Arsip</button></a>
                         </td>
                     </tr>

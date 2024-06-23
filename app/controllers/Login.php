@@ -21,17 +21,17 @@ class Login extends Controller{
 ;
             if($nip === 'admin' && $password === '123'){
                 Flasher::setFlash('berhasil!', 'Login sebagai admin', 'success');
-                header('Location:'. BASEURL . '/dashboard_admin');
+                header('Location:'. BASEURL . '/Dashboard_admin');
                 exit;
 
             }elseif ($nip === $nipcp['nip'] && $password === '123') {
                 Flasher::setFlash('berhasil!', 'Login sebagai calon pensiun', 'success');
-                header('Location:'. BASEURL . '/dashboard_calonpensiun/index/'. $nip);
+                header('Location:'. BASEURL . '/Dashboard_calonpensiun/index/'. $nip);
                 exit;
 
             } else {
                 Flasher::setFlash('gagal!', 'Login', 'danger');
-                header('Location:'. BASEURL . '/login');
+                header('Location:'. BASEURL . '/Login');
             }
             
         }
