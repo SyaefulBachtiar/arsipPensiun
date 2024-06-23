@@ -38,13 +38,13 @@
         </div>
     </div>
     <div class="list-group mt-5">
-        <a href="<?= BASEURL ?>/DPCP" class="list-group-item list-group-item-action <?php if ($status == 'DPCPselesai') echo 'active'; ?>">
+        <a href="<?= BASEURL ?>/DPCP/<?= isset($data['cp']['nip']) ?>" class="list-group-item list-group-item-action <?php if ($status == 'DPCPselesai') echo 'active'; ?>">
             Data DPCP
         </a>
-        <a href="<?= BASEURL ?>/Data_daftarKeluarga" class="list-group-item list-group-item-action <?php if ($status == 'DAKselesai') echo 'active'; ?>">
+        <a href="<?= BASEURL ?>/Data_daftarKeluarga/<?= isset($data['cp']['nip']) ?>" class="list-group-item list-group-item-action <?php if ($status == 'DAKselesai') echo 'active'; ?>">
             Daftar Keluarga
         </a>
-        <a href="<?= BASEURL ?>/Data_riwayatPekerjaan" class="list-group-item list-group-item-action <?php if ($activeStep == 'riwayat_pekerjaan') echo 'active'; ?>">
+        <a href="<?= BASEURL ?>/Data_riwayatPekerjaan/<?= isset($data['cp']['nip']) ?>" class="list-group-item list-group-item-action <?php if ($activeStep == 'riwayat_pekerjaan') echo 'active'; ?>">
             Riwayat Pekerjaan
         </a>
     </div>
