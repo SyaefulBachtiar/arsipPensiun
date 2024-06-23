@@ -12,10 +12,11 @@ class Data_riwayatPekerjaan extends Controller{
 
 
 
-    public function read_saved_rp(){
+    public function read_saved_rp($nip){
         if( $this->model('Calon_Pensiunan')->input_riwayatPekerjaan($_POST) > 0){
             Flasher::setFlash('berhasil!', 'ditambahkan', 'success');
-            header('Location:'. BASEURL . '/Dashboard_calonpensiun');
+            $data = $this->model('Calon_Pensiunan')->getIdRelation($nip);
+            header('Location:'. BASEURL . '/Dashboard_calonpensiun', $data);
             exit;
         }else{
             Flasher::setFlash('gagal!', 'ditambahkan', 'danger');
