@@ -10,7 +10,7 @@
         <div class="col-12 col-sm-8 col-md-6 col-lg-4">
             <div class="card shadow-sm">
                 <div class="card-body">
-                    <h4 class="card-title pb-5 pt-2 mb-3 text-center">Login Arsippensiun Dinas PUPR</h4>
+                    <h4 class="card-title pb-5 pt-2 mb-3 text-center">Arsippensiun Dinas PUPR</h4>
                     <form action="<?= BASEURL ?>/Login/proses" method="POST">
                         <div class="mb-3">
                             <label for="nip" class="form-label">Masukan NIP</label>
