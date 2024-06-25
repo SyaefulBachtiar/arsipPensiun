@@ -10,7 +10,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="col-md-8">
             <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 25% + 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <div class="d-flex justify-content-between mt-4">
                 <div class="step <?php if ($activeStep == 'data_dasar') echo 'active'; ?>">
@@ -49,7 +49,7 @@
         </a>
     </div>
 
-    <?= isset($data['cp']['status']) ? htmlspecialchars($data['cp']['status']) : '0'; ?>
+   
 
     <!-- Main Content -->
     <div class="container my-5">
