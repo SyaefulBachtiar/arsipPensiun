@@ -3,7 +3,7 @@
         <?php Flasher::flash_login(); ?>
     </div>
 </div>
-<?= isset($data['cp']['status']) ?>
+
 
 <div class="container my-4">
     <h2 class="text-center"><?= isset($data['cp']['nama']) ? htmlspecialchars($data['cp']['nama']) : 'Nama Tidak Tersedia'; ?></h2>
@@ -48,6 +48,8 @@
             Riwayat Pekerjaan
         </a>
     </div>
+
+    <?= isset($data['cp']['status']) ? htmlspecialchars($data['cp']['status']) : '0'; ?>
 
     <!-- Main Content -->
     <div class="container my-5">
