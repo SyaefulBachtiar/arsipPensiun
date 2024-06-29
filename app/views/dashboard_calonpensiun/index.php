@@ -5,19 +5,19 @@
 </div>
 <?php $dk = $data['cp']['daftar_keluarga']; 
       $rp = $data['cp']['riwayat_pekerjaan'];
-    var_dump(isset($dk[0]['status_dk']));
-    echo isset($dk[0]['status_dk']) ? $dk[0]['status_dk'] : 'kosong';
-    echo "<br><br><br>";
-    var_dump($rp[0]['status_rp']);
-    echo isset($rp[0]['status_rp']) ? $rp[0]['status_rp'] : 'kosong';
+    // var_dump(isset($dk[0]['status_dk']));
+    // echo isset($dk[0]['status_dk']) ? $dk[0]['status_dk'] : 'kosong';
+    // echo "<br><br><br>";
+    // var_dump($rp[0]['status_rp']);
+    // echo isset($rp[0]['status_rp']) ? $rp[0]['status_rp'] : 'kosong';
 ?>
 <div class="container my-4">
     <h2 class="text-center"><?= isset($data['cp']['nama']) ? htmlspecialchars($data['cp']['nama']) : 'Nama Tidak Tersedia'; ?></h2>
     <div class="row justify-content-center align-items-center">
         <div class="col-md-8">
             <div class="progress">
-            <?php if(isset($data['cp']['status']) === 25 ): ?>
-                <div class="progress-bar" role="progressbar" style="width: <?= $data['cp']['status'] ?>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <?php if($data['cp']['status'] === 25 && $dk[0]['status_dk'] === 25 && $rp[0]['status_rp'] === 25): ?>
+                <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 <?php endif ?>
                 
             </div>
