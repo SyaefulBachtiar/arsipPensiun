@@ -4,13 +4,13 @@
     </div>
 </div>
 
-
+<?= var_dump($data['cp']['daftar_keluarga']); ?>
 <div class="container my-4">
-    <h2 class="text-center"><?= isset($data['cp']['status']) ?></h2>
+    <h2 class="text-center"><?= isset($data['cp']['status']) ? htmlspecialchars($data['cp']['status']) : 'Nama Tidak Tersedia'; ?></h2>
     <div class="row justify-content-center align-items-center">
         <div class="col-md-8">
             <div class="progress">
-            <?php if(isset($data['cp']) === 25): ?>
+            <?php if(isset($data['cp'])): ?>
                 <div class="progress-bar" role="progressbar" style="width: <?= $data['cp']['status'] ?>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 <?php endif ?>
                 
