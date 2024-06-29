@@ -10,7 +10,9 @@
     <div class="row justify-content-center align-items-center">
         <div class="col-md-8">
             <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <?php if(isset($data['cp']['status']) === 25): ?>
+                <div class="progress-bar" role="progressbar" style="width: <?= $data['cp']['status'] ?>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <?php endif ?>
             </div>
             <div class="d-flex justify-content-between mt-4">
                 <div class="step <?php if ($activeStep == 'data_dasar') echo 'active'; ?>">
