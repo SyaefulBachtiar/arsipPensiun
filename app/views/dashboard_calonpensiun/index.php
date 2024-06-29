@@ -18,6 +18,24 @@
             <div class="progress">
             <?php if($data['cp']['status'] === 25 && $dk[0]['status_dk'] === 25 && $rp[0]['status_rp'] === 25): ?>
                 <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                
+                <?php elseif($data['cp']['status'] === 25 && $dk[0]['status_dk'] === 25): ?>
+                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                    <?php elseif($data['cp']['status'] === 25 && $rp[0]['status_rp'] === 25):?>
+                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                        <?php elseif($dk[0]['status_dk'] === 25 && $rp[0]['status_rp'] === 25) : ?>
+                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            
+                            <?php elseif($dk[0]['status_dk'] === 25) :?>
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                <?php elseif($data['cp']['status'] === 25): ?>
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                    <?php elseif($rp[0]['status_rp'] === 25): ?>
+                                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 <?php endif ?>
                 
             </div>
