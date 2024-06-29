@@ -4,9 +4,9 @@
     </div>
 </div>
 
-<?= var_dump($data['cp']['daftar_keluarga']); ?>
+<?= var_dump($data['cp']['daftar_keluarga']['status_dk']); ?>
 <div class="container my-4">
-    <h2 class="text-center"><?= isset($data['cp']['status']) ? htmlspecialchars($data['cp']['status']) : 'Nama Tidak Tersedia'; ?></h2>
+    <h2 class="text-center"><?= isset($data['cp']['nama']) ? htmlspecialchars($data['cp']['nama']) : 'Nama Tidak Tersedia'; ?></h2>
     <div class="row justify-content-center align-items-center">
         <div class="col-md-8">
             <div class="progress">
