@@ -4,7 +4,7 @@
     </div>
 </div>
 <?php $dk = $data['cp']['daftar_keluarga']; 
-  if (isset($dk['status_dk'])) {
+  if (isset($dk)) {
     var_dump($dk['status_dk']);
     echo $dk['status_dk'];
 } else {
