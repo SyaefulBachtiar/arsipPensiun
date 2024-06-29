@@ -6,7 +6,7 @@
 
 
 <div class="container my-4">
-    <h2 class="text-center"><?= isset($data['cp']['status'])?></h2>
+    <h2 class="text-center"><?= isset($data['cp']['status']) ? htmlspecialchars($data['cp']['status']) : 'Nama Tidak Tersedia'; ?></h2>
     <div class="row justify-content-center align-items-center">
         <div class="col-md-8">
             <div class="progress">
@@ -73,6 +73,7 @@
                         <th>Nama</th>
                         <th>NIP</th>
                         <th>Unit Organisasi</th>
+                        <th>status</th>
                         <th>Keterangan</th>
                     </tr>
                 </thead>
@@ -83,6 +84,7 @@
                         <td><?= htmlspecialchars($data['cp']['nama']); ?></td>
                         <td><?= htmlspecialchars($data['cp']['nip']); ?></td>
                         <td><?= htmlspecialchars($data['cp']['unit_organisasi']); ?></td>
+                        <td><?= htmlspecialchars($data['cp']['status']); ?></td>
                         <td>
                         
                             <a href="#"><button class="btn btn-info btn-sm">Selesai</button></a>
