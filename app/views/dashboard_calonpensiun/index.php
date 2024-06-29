@@ -1,9 +1,11 @@
 
 <?php $dk = $data['cp']['daftar_keluarga']; 
       $rp = $data['cp']['riwayat_pekerjaan'];
-      echo isset($dk[0]['status_dk']) ? $dk[0]['status_dk'] : '0';
-      echo '<br><br>';
-      echo isset($data['cp']['status']);
+      
+      
+      $status_dk = isset($dk[0]['status_dk']) ? $dk[0]['status_dk'] : '0';
+      $status_cp = isset($data['cp']['status']) ? $data['cp']['status'] : '0';
+      $status_rp = isset($rp[0]['status_rp']) ? $status_rp[0]['status_rp'] : '0';
 ?>
 <div class="row justify-content-center align-items-center">
     <div class="col-lg-6 ">
@@ -15,7 +17,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="col-md-8">
             <div class="progress">
-            <?php if($data['cp']['status'] === 25 && isset($dk[0]['status_dk']) === 25 && isset($rp[0]['status_rp']) === 25): ?>
+            <?php if($status_cp && $status_dk && $status_rp === 25): ?>
                 <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             
                                         <?php else: ?>
