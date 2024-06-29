@@ -1,7 +1,9 @@
 
 <?php $dk = $data['cp']['daftar_keluarga']; 
       $rp = $data['cp']['riwayat_pekerjaan'];
-      echo isset($dk[0]['status_dk']);
+      echo isset($dk[0]['status_dk']) ? $dk[0]['status_dk'] : '0';
+      echo '<br><br>';
+      echo isset($data['cp']['status']);
 ?>
 <div class="row justify-content-center align-items-center">
     <div class="col-lg-6 ">
