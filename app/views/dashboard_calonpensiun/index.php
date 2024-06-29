@@ -19,9 +19,7 @@
             <?php if($data['cp']['status'] && $dk[0]['status_dk'] && $rp[0]['status_rp'] === 25): ?>
                 <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 
-                <?php elseif($data['cp']['status'] === 25 && $data['cp']['status'] != 0):?>
-                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-
+               
 
                                         <?php else: ?>
                                             <div class="progress-bar" role="progressbar" style="width: 0" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
