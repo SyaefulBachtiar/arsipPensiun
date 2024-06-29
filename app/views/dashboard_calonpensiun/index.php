@@ -1,16 +1,12 @@
+
+<?php $dk = $data['cp']['daftar_keluarga']; 
+      $rp = $data['cp']['riwayat_pekerjaan'];
+?>
 <div class="row justify-content-center align-items-center">
     <div class="col-lg-6 ">
         <?php Flasher::flash_login(); ?>
     </div>
 </div>
-<?php $dk = $data['cp']['daftar_keluarga']; 
-      $rp = $data['cp']['riwayat_pekerjaan'];
-    // var_dump(isset($dk[0]['status_dk']));
-    // echo isset($dk[0]['status_dk']) ? $dk[0]['status_dk'] : 'kosong';
-    // echo "<br><br><br>";
-    // var_dump($rp[0]['status_rp']);
-    // echo isset($rp[0]['status_rp']) ? $rp[0]['status_rp'] : 'kosong';
-?>
 <div class="container my-4">
     <h2 class="text-center"><?= isset($data['cp']['nama']) ? htmlspecialchars($data['cp']['nama']) : 'Nama Tidak Tersedia'; ?></h2>
     <div class="row justify-content-center align-items-center">
@@ -18,12 +14,9 @@
             <div class="progress">
             <?php if($data['cp']['status'] && $dk[0]['status_dk'] && $rp[0]['status_rp'] === 25): ?>
                 <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                
-               
-
+            
                                         <?php else: ?>
                                             <div class="progress-bar" role="progressbar" style="width: 0" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-
                 <?php endif ?>
                 
             </div>
