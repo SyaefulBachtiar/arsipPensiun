@@ -17,7 +17,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="col-md-8">
             <div class="progress">
-            <?php if($status_cp && $status_dk && $status_rp === 25): ?>
+            <?php if($data['cp']['status'] === 25 && isset($dk[0]['status_dk']) === 25 && isset($rp[0]['status_rp']) === 25): ?>
                 <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             
                                         <?php else: ?>
