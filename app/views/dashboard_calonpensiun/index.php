@@ -4,25 +4,19 @@
     </div>
 </div>
 <?php $dk = $data['cp']['daftar_keluarga']; 
-if (is_array($dk)) {
-    foreach ($dk as $anggota) {
-        if (isset($anggota['status_dk'])) {
-            var_dump($anggota['status_dk']);
-            echo $anggota['status_dk'];
-        } else {
-            echo "Elemen 'status_dk' tidak ditemukan dalam salah satu array.";
-        }
-    }
-} else {
-    echo "Elemen 'daftar_keluarga' tidak ditemukan atau bukan array.";
-}
+      $rp = $data['cp']['riwayat_pekerjaan'];
+    var_dump(isset($dk[0]['status_dk']));
+    echo isset($dk[0]['status_dk']);
+    echo "<br><br><br>";
+    var_dump(isset($rp[0]['status_rp']));
+    echo isset($rp[0]['status_rp']);
 ?>
 <div class="container my-4">
     <h2 class="text-center"><?= isset($data['cp']['nama']) ? htmlspecialchars($data['cp']['nama']) : 'Nama Tidak Tersedia'; ?></h2>
     <div class="row justify-content-center align-items-center">
         <div class="col-md-8">
             <div class="progress">
-            <?php if(isset($data['cp'])): ?>
+            <?php if(isset($data['cp']['status']) === 25 ): ?>
                 <div class="progress-bar" role="progressbar" style="width: <?= $data['cp']['status'] ?>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 <?php endif ?>
                 
