@@ -1,6 +1,7 @@
 
 <?php $dk = $data['cp']['daftar_keluarga']; 
       $rp = $data['cp']['riwayat_pekerjaan'];
+      echo isset($dk[0]['status_dk']);
 ?>
 <div class="row justify-content-center align-items-center">
     <div class="col-lg-6 ">
