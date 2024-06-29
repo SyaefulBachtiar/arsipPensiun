@@ -4,11 +4,17 @@
     </div>
 </div>
 <?php $dk = $data['cp']['daftar_keluarga']; 
-  if (isset($dk)) {
-    var_dump($dk['status_dk']);
-    echo $dk['status_dk'];
+if (is_array($dk)) {
+    foreach ($dk as $anggota) {
+        if (isset($anggota['status_dk'])) {
+            var_dump($anggota['status_dk']);
+            echo $anggota['status_dk'];
+        } else {
+            echo "Elemen 'status_dk' tidak ditemukan dalam salah satu array.";
+        }
+    }
 } else {
-    echo "Elemen 'status_dk' tidak ditemukan.";
+    echo "Elemen 'daftar_keluarga' tidak ditemukan atau bukan array.";
 }
 ?>
 <div class="container my-4">
