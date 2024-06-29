@@ -6,10 +6,10 @@
 <?php $dk = $data['cp']['daftar_keluarga']; 
       $rp = $data['cp']['riwayat_pekerjaan'];
     var_dump(isset($dk[0]['status_dk']));
-    echo isset($dk[0]['status_dk']);
+    echo isset($dk[0]['status_dk']) ? $dk[0]['status_dk'] : 'kosong';
     echo "<br><br><br>";
-    var_dump(isset($rp[0]['status_rp']));
-    echo isset($rp[0]['status_rp']);
+    var_dump($rp[0]['status_rp']);
+    echo isset($rp[0]['status_rp']) ? $rp[0]['status_rp'] : 'kosong';
 ?>
 <div class="container my-4">
     <h2 class="text-center"><?= isset($data['cp']['nama']) ? htmlspecialchars($data['cp']['nama']) : 'Nama Tidak Tersedia'; ?></h2>
