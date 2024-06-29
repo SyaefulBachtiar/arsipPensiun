@@ -5,7 +5,7 @@
 </div>
 <?php $dk = $data['cp']['daftar_keluarga']; ?>
 <?= 
-    var_dump($dk['status_dk']);
+    var_dump(isset($dk['status_dk']));
     echo isset($dk['status_dk']) ? $dk['status_dk'] : 'tidak ada';
 ?>
 <div class="container my-4">
