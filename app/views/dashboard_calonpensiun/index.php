@@ -5,8 +5,8 @@
 </div>
 <?php $dk = $data['cp']['daftar_keluarga']; ?>
 <?= 
-    var_dump($dk);
-    echo $dk['status_dk'];
+    var_dump($dk['status_dk']);
+    echo isset($dk['status_dk']) ? $dk['status_dk'] : 'tidak ada';
 ?>
 <div class="container my-4">
     <h2 class="text-center"><?= isset($data['cp']['nama']) ? htmlspecialchars($data['cp']['nama']) : 'Nama Tidak Tersedia'; ?></h2>
