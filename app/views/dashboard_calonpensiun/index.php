@@ -4,12 +4,12 @@
     </div>
 </div>
 <?php $dk = $data['cp']['daftar_keluarga']; 
-   if(isset($dk['status_dk'])){
-        var_dump($dk['status_dk']);
-        echo $dk['status_dk'];
-   }else{
-    echo "tidak ada";
-   }
+  if (isset($dk['status_dk'])) {
+    var_dump($dk['status_dk']);
+    echo $dk['status_dk'];
+} else {
+    echo "Elemen 'status_dk' tidak ditemukan.";
+}
 ?>
 <div class="container my-4">
     <h2 class="text-center"><?= isset($data['cp']['nama']) ? htmlspecialchars($data['cp']['nama']) : 'Nama Tidak Tersedia'; ?></h2>
