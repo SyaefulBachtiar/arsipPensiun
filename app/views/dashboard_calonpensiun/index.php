@@ -3,10 +3,10 @@
         <?php Flasher::flash_login(); ?>
     </div>
 </div>
-
-<?= $dk = $data['cp']['daftar_keluarga'];
+<?php $dk = $data['cp']['daftar_keluarga']; ?>
+<?= 
     var_dump($dk);
-    echo "$dk";
+    echo $dk['status_dk'];
 ?>
 <div class="container my-4">
     <h2 class="text-center"><?= isset($data['cp']['nama']) ? htmlspecialchars($data['cp']['nama']) : 'Nama Tidak Tersedia'; ?></h2>
