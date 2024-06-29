@@ -19,7 +19,16 @@
             <div class="progress">
             <?php if($status_cp && $status_dk && $status_rp === 25): ?>
                 <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            
+                
+                <?php elseif($status_cp === 25 && $status_cp !== 0) :?>
+                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                    <?php elseif($status_dk === 25 && $status_dk !== 0): ?>
+                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                        <?php elseif($status_rp === 25 && $status_rp !== 0) : ?>
+                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                       
                                         <?php else: ?>
                                             <div class="progress-bar" role="progressbar" style="width: 0" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 <?php endif ?>
