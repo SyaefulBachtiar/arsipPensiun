@@ -25,7 +25,7 @@ class Detail extends Controller {
     }
 
     public function setujui_dua($id_anggota_keluarga){
-        if($this->model('Calon_Pensiunan')->ubah_status($id_anggota_keluarga) > 0){
+        if($this->model('Calon_Pensiunan')->ubah_status_dua($id_anggota_keluarga) > 0){
             Flasher::setFlash('berhasil!', 'disetujui', 'success');
             header('Location:'. BASEURL . '/Detail/index/'. $_SESSION['nip']);
             exit;   
@@ -38,7 +38,7 @@ class Detail extends Controller {
     }
 
     public function setujui_tiga($nip){
-        if($this->model('Calon_Pensiunan')->ubah_status($nip) > 0){
+        if($this->model('Calon_Pensiunan')->ubah_status_tiga($nip) > 0){
             Flasher::setFlash('berhasil!', 'disetujui', 'success');
             header('Location:'. BASEURL . '/Detail/index/'. $_SESSION['nip']);
             exit;   
