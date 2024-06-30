@@ -12,11 +12,9 @@ $rp = $data['cp']['riwayat_pekerjaan'];
 
 $status_dk = isset($dk[0]['id_anggota_keluarga']) ? $dk[0]['id_anggota_keluarga'] : '0';
 $status_rp = isset($rp[0]['id_riwayatpkerjaan']) ? $rp[0]['id_riwayatpkerjaan'] : '0';
-echo $data['cp']['nip'];
-echo "<br>";
-echo $status_dk;
-echo "<br>";
-echo $status_rp;
+$ss_dk = isset($dk[0]['status_dk']) ? $dk[0]['status_dk'] : '0';
+$ss_rp = isset($rp[0]['status_rp']) ? $rp[0]['status_rp'] : '0';
+
 
    
 ?>
@@ -60,7 +58,7 @@ echo $status_rp;
                 Daftar Keluarga <a href="<?= BASEURL ?>/Detail/setujui/<?= $status_dk ?>"><button class="btn btn-success">Setujui</button></a>
             </p>
             <p  class="list-group-item list-group-item-action">
-                Riwayat Pekerjaan <?php if($status_rp != 0) echo "<a href='". BASEURL."/Detail/setujui".$status_rp."'><button class='btn btn-primary'>Setujui</button></a>" ?>
+                Riwayat Pekerjaan <?php if($ss_rp === 0) echo "<a href='". BASEURL."/Detail/setujui".$status_rp."'><button class='btn btn-primary'>Setujui</button></a>" ?>
             </p>
         </div>
     </div>
