@@ -7,7 +7,10 @@
       $status_cp = isset($data['cp']['status']) ? $data['cp']['status'] : '0';
       $status_rp = isset($rp[0]['status_rp']) ? $rp[0]['status_rp'] : '0';
 
-      var_dump($_SESSION[$nip]);
+      $nip = isset($data['cp']['nip']) ? $data['cp']['nip'] : 0;
+      $_SESSION['nip'] = $nip;
+
+      var_dump($_SESSION['nip']);
 ?>
 <div class="row justify-content-center align-items-center">
     <div class="col-lg-6 ">
