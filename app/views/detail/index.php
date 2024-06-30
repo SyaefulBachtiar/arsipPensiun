@@ -1,5 +1,12 @@
+<div class="row justify-content-center align-items-center">
+    <div class="col-lg-6 ">
+        <?php Flasher::flash_login(); ?>
+    </div>
+</div>
+
+
 <?php $_SESSION['nip'] = $data['cp']['nip']; 
-      var_dump($_SESSION['nip']);
+      
 ?>
 <div class="container my-4">
         <h2 class="text-center"><?= $data['cp']['nama'] ?> <?= $data['cp']['nip'] ?></h2>

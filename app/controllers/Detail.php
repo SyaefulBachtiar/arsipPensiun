@@ -14,13 +14,12 @@ class Detail extends Controller {
     public function setujui(){
         if($this->model('Calon_Pensiunan')->ubah_status($_POST) > 0){
             Flasher::setFlash('berhasil!', 'disetujui', 'success');
-            header('Location:'. BASEURL . '/Detail/index/'. $_SESSION['nip']);
+            header('Location:'. BASEURL . '/Dasboard_admin');
             exit;   
         }else{
             Flasher::setFlash('gagal!', 'disetujui', 'danger');
-            header('Location:'. BASEURL . '/Detail/index/'. $_SESSION['nip']);
+            header('Location:'. BASEURL . '/Dashboard_admin');
             exit; 
         }
-        header("Location:". BASEURL . "/Detail");
     }
 }
