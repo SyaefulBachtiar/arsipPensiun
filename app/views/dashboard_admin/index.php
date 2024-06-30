@@ -31,6 +31,7 @@
                     <!-- Example Data Row -->
                     
                        <?php foreach( $data['cp'] as $cp): ?>
+                        
                         <tr>
                         <td><?= $cp['nama']; ?></td>
                         <td><?= $cp['nip']; ?></td>
@@ -40,9 +41,7 @@
                             <a href="<?= BASEURL ?>/dpcp/clear_dpcp/<?= $cp['nip']; ?>"><button class="btn btn-success btn-sm" onclick="return confirm('yakin?');">Arsip</button></a>
                         </td>
                     </tr>
-                        <?php $_SESSION['nip'] = $cp['nip']; 
-                              var_dump($_SESSION['nip']);
-                        ?>
+                      
 
                         <?php endforeach ?>
                     <!-- More rows as needed -->

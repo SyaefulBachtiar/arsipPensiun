@@ -1,11 +1,10 @@
-<?php $progres = "25%" ?>
+<?php $_SESSION['nip'] = $data['cp']['nip']; 
+      var_dump($_SESSION['nip']);
+?>
 <div class="container my-4">
         <h2 class="text-center"><?= $data['cp']['nama'] ?> <?= $data['cp']['nip'] ?></h2>
         <div class="row justify-content-center align-items-center">
             <div class="col-md-8">
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: <?= $progres ?>;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
                 <div class="d-flex justify-content-between mt-4">
                     <div class="step <?php if ($activeStep == 'data_dasar') echo 'active'; ?>">
                         <div class="step-icon">
