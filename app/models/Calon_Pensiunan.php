@@ -157,11 +157,48 @@ class Calon_Pensiunan {
             echo 'Error: ' . $e->getMessage();
             return 0; // Atau nilai lain yang sesuai untuk menandakan kegagalan
         }
+
+        
     }
     
+    public function ubah_status_dua($id_anggota_keluarga) {
+        try {
+            $query = "UPDATE tbl_daftarkeluarga SET status_rp = 25 WHERE id_anggota_keluarga = :id_anggota_keluarga";
+    
+            $this->db->query($query);
+            $this->db->bind(':id_anggota_keluarga', $id_anggota_keluarga);
+    
+            $this->db->execute();
+    
+            return $this->db->rowCount();
+        } catch (PDOException $e) {
+            // Tampilkan pesan error jika terjadi masalah
+            echo 'Error: ' . $e->getMessage();
+            return 0; // Atau nilai lain yang sesuai untuk menandakan kegagalan
+        }
+
+        
+    }
 
 
+    public function ubah_status_tiga($nip) {
+        try {
+            $query = "UPDATE tbl_data_cp SET status_rp = 25 WHERE nip = :nip";
+    
+            $this->db->query($query);
+            $this->db->bind(':nip', $nip);
+    
+            $this->db->execute();
+    
+            return $this->db->rowCount();
+        } catch (PDOException $e) {
+            // Tampilkan pesan error jika terjadi masalah
+            echo 'Error: ' . $e->getMessage();
+            return 0; // Atau nilai lain yang sesuai untuk menandakan kegagalan
+        }
 
+        
+    }
 
 
 

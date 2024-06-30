@@ -23,4 +23,30 @@ class Detail extends Controller {
         }
         header("Location:". BASEURL . "/Detail");
     }
+
+    public function setujui_dua($id_anggota_keluarga){
+        if($this->model('Calon_Pensiunan')->ubah_status($id_anggota_keluarga) > 0){
+            Flasher::setFlash('berhasil!', 'disetujui', 'success');
+            header('Location:'. BASEURL . '/Detail/index/'. $_SESSION['nip']);
+            exit;   
+        }else{
+            Flasher::setFlash('gagal!', 'disetujui', 'danger');
+            header('Location:'. BASEURL . '/Detail/index/'. $_SESSION['nip']);
+            exit; 
+        }
+        header("Location:". BASEURL . "/Detail");
+    }
+
+    public function setujui_tiga($nip){
+        if($this->model('Calon_Pensiunan')->ubah_status($nip) > 0){
+            Flasher::setFlash('berhasil!', 'disetujui', 'success');
+            header('Location:'. BASEURL . '/Detail/index/'. $_SESSION['nip']);
+            exit;   
+        }else{
+            Flasher::setFlash('gagal!', 'disetujui', 'danger');
+            header('Location:'. BASEURL . '/Detail/index/'. $_SESSION['nip']);
+            exit; 
+        }
+        header("Location:". BASEURL . "/Detail");
+    }
 }
