@@ -60,7 +60,8 @@ echo $status_rp;
                 Daftar Keluarga <a href="<?= BASEURL ?>/Detail/setujui/<?= $status_dk ?>"><button class="btn btn-success">Setujui</button></a>
             </p>
             <p  class="list-group-item list-group-item-action">
-                Riwayat Pekerjaan <a href="<?= BASEURL ?>/Detail/setujui/<?= $status_rp ?>"><button class="btn btn-success">Setujui</button></a>
+                Riwayat Pekerjaan <?php if($status_rp != 0) echo "<a href='". BASEURL."/Detail/setujui".$status_rp."'><button class='btn btn-primary'>Setujui</button></a>" ?>
             </p>
         </div>
     </div>
+
