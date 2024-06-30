@@ -4,10 +4,7 @@
     </div>
 </div>
 
-<?php $nip = isset($data['cp']['nip']) ? $data['cp']['nip'] : '0'; 
-    $_SESSION['nip'] = $nip;
-    var_dump($_SESSION['nip']);
-?>
+
   <!-- Main Content -->
   <div class="container my-5">
         <h1 class="mb-4">Dashboard/Admin</h1>
@@ -43,6 +40,10 @@
                             <a href="<?= BASEURL ?>/dpcp/clear_dpcp/<?= $cp['nip']; ?>"><button class="btn btn-success btn-sm" onclick="return confirm('yakin?');">Arsip</button></a>
                         </td>
                     </tr>
+                        <?php $_SESSION['nip'] = $cp['nip']; 
+                              var_dump($_SESSION['nip']);
+                        ?>
+
                         <?php endforeach ?>
                     <!-- More rows as needed -->
                 </tbody>
