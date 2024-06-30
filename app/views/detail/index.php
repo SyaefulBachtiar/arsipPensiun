@@ -6,7 +6,13 @@
 
 
 <?php $_SESSION['nip'] = $data['cp']['nip']; 
+      $dk = $data['cp']['daftar_keluarga']; 
+      $rp = $data['cp']['riwayat_pekerjaan'];
       
+      
+      $status_dk = isset($dk[0]['status_dk']) ? $dk[0]['status_dk'] : '0';
+      $status_rp = isset($rp[0]['status_rp']) ? $rp[0]['status_rp'] : '0';
+      var_dump($status_rp);
 ?>
 <div class="container my-4">
         <h2 class="text-center"><?= $data['cp']['nama'] ?> <?= $data['cp']['nip'] ?></h2>
@@ -48,7 +54,7 @@
                 Daftar Keluarga
             </p>
             <p  class="list-group-item list-group-item-action">
-                Riwayat Pekerjaan <a href="<?= BASEURL ?>/Detail/setujui"><button class="btn btn-success">Setujui</button></a>
+                Riwayat Pekerjaan <a href="<?= BASEURL ?>/Detail/setujui/". <?= $data['cp']['nip'] ?>><button class="btn btn-success">Setujui</button></a>
             </p>
         </div>
     </div>
