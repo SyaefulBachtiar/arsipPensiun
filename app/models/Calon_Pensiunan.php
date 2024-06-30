@@ -143,7 +143,7 @@ class Calon_Pensiunan {
     }
 
     public function ubah_status($id_riwayatpkerjaan) {
-    $query = "UPDATE tbl_riwayatpekerjaan SET status_rp = 25 WHERE id_riwayatpkerjaan = :id_riwayatpkerjaan";
+    $query = "UPDATE tbl_riwayatpekerjaan SET status_rp = '25' WHERE tbl_riwayatpekerjaan.id_riwayatpkerjaan = :id_riwayatpekerjaan";
 
     $this->db->query($query);
     $this->db->bind('id_riwayatpkerjaan', $id_riwayatpkerjaan);
