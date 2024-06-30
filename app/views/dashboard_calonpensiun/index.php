@@ -48,29 +48,6 @@
                 <?php endif ?>
                 
             </div>
-            <div class="d-flex justify-content-between mt-4">
-                <div class="step <?php if ($activeStep == 'data_dasar') echo 'active'; ?>">
-                    <div class="step-icon">
-                        <i class="fas fa-user"></i>
-                    </div>
-                </div>
-                <div class="step <?php if ($activeStep == 'data_terkait_pensiun') echo 'active'; ?>">
-                    <div class="step-icon">2</div>
-                    <div class="step-text">Data Terkait Pensiun</div>
-                </div>
-                <div class="step <?php if ($activeStep == 'daftar_keluarga') echo 'active'; ?>">
-                    <div class="step-icon">3</div>
-                    <div class="step-text">Daftar Keluarga</div>
-                </div>
-                <div class="step <?php if ($activeStep == 'riwayat_pekerjaan') echo 'active'; ?>">
-                    <div class="step-icon">4</div>
-                    <div class="step-text">Riwayat Pekerjaan</div>
-                </div>
-                <div class="step <?php if ($activeStep == 'selesai') echo 'active'; ?>">
-                    <div class="step-icon"></div>
-                    <div class="step-text">Selesai</div>
-                </div>
-            </div>
         </div>
     </div>
     <div class="list-group mt-5">
