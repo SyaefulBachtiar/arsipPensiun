@@ -11,9 +11,10 @@
       $rp = $data['cp']['riwayat_pekerjaan'];
       
       
-      $status_dk = isset($dk[0]['id_anggota_keluarga']) ? $dk[0]['id_anggota_keluarga'] : '0';
-      $status_rp = isset($rp[0]['id_riwayatpekerjaan']) ? $rp[0]['id_riwayatpekerjaan'] : '0';
+      $status_dk = isset($dk[0]['id_anggota_keluarga']) ? $dk[0]['id_anggota_keluarga'] : 'tidak ada';
+      $status_rp = isset($rp[0]['id_riwayatpekerjaan']) ? $rp[0]['id_riwayatpekerjaan'] : 'tidak ada';
       echo $status_rp;
+      echo "<br>";
       echo $status_dk;
 ?>
 <div class="container my-4">
