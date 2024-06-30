@@ -11,8 +11,8 @@ class Detail extends Controller {
         $this->view('template/footer');
     }
 
-    public function setujui(){
-        if($this->model('Calon_Pensiunan')->ubah_status($_POST) > 0){
+    public function setujui($id_riwayatpkerjaan){
+        if($this->model('Calon_Pensiunan')->ubah_status($id_riwayatpkerjaan) > 0){
             Flasher::setFlash('berhasil!', 'disetujui', 'success');
             header('Location:'. BASEURL . '/Detail/index/'. $_SESSION['nip']);
             exit;   
