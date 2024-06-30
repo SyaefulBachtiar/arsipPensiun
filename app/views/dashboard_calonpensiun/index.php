@@ -6,6 +6,8 @@
       $status_dk = isset($dk[0]['status_dk']) ? $dk[0]['status_dk'] : '0';
       $status_cp = isset($data['cp']['status']) ? $data['cp']['status'] : '0';
       $status_rp = isset($rp[0]['status_rp']) ? $rp[0]['status_rp'] : '0';
+
+      var_dump($_SESSION);
 ?>
 <div class="row justify-content-center align-items-center">
     <div class="col-lg-6 ">
