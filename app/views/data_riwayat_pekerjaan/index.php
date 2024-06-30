@@ -1,4 +1,4 @@
-<?= $_SESSION['nip'] ?>
+
 <div class="container my-5">
         <h1 class="mb-4">Tambah Data Riwayat Pekerjaan</h1>
         <form action="<?= BASEURL?>/Data_riwayatPekerjaan/read_saved_rp" method="POST">
