@@ -13,9 +13,9 @@
       
       $status_dk = isset($dk[0]['id_anggota_keluarga']) ? $dk[0]['id_anggota_keluarga'] : 'tidak ada';
       $status_rp = isset($rp[0]['id_riwayatpekerjaan']) ? $rp[0]['id_riwayatpekerjaan'] : 'tidak ada';
-      echo $status_rp;
-      echo "<br>";
       echo $status_dk;
+      echo "<br>";
+      echo $status_rp;
 ?>
 <div class="container my-4">
         <h2 class="text-center"><?= $data['cp']['nama'] ?> <?= $data['cp']['nip'] ?></h2>
@@ -50,14 +50,14 @@
         <div class="list-group mt-5">
 
             <p  class="list-group-item list-group-item-action">
-                DPCP <a href="<?= BASEURL ?>/Detail/setujui/". <?= $data['cp']['nip'] ?>><button class="btn btn-success">Setujui</button></a>
+                DPCP <a href="<?= BASEURL ?>/Detail/setujui/" <?= $data['cp']['nip'] ?>><button class="btn btn-success">Setujui</button></a>
             </p>
             
             <p  class="list-group-item list-group-item-action">
-                Daftar Keluarga <a href="<?= BASEURL ?>/Detail/setujui/". <?= $status_dk ?>><button class="btn btn-success">Setujui</button></a>
+                Daftar Keluarga <a href="<?= BASEURL ?>/Detail/setujui/" <?= $status_dk ?>><button class="btn btn-success">Setujui</button></a>
             </p>
             <p  class="list-group-item list-group-item-action">
-                Riwayat Pekerjaan <a href="<?= BASEURL ?>/Detail/setujui/". <?= $status_rp ?>><button class="btn btn-success">Setujui</button></a>
+                Riwayat Pekerjaan <a href="<?= BASEURL ?>/Detail/setujui/" <?= $status_rp ?>><button class="btn btn-success">Setujui</button></a>
             </p>
         </div>
     </div>
