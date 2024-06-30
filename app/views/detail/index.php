@@ -6,13 +6,15 @@
 
 
 <?php $_SESSION['nip'] = $data['cp']['nip']; 
+
       $dk = $data['cp']['daftar_keluarga']; 
       $rp = $data['cp']['riwayat_pekerjaan'];
       
       
-      $status_dk = isset($dk[0]['status_dk']) ? $dk[0]['status_dk'] : '0';
-      $status_rp = isset($rp[0]['status_rp']) ? $rp[0]['status_rp'] : '0';
-      var_dump($status_rp);
+      $status_dk = isset($dk[0]['id_anggota_keluarga']) ? $dk[0]['id_anggota_keluarga'] : '0';
+      $status_rp = isset($rp[0]['id_riwayatpekerjaan']) ? $rp[0]['id_riwayatpekerjaan'] : '0';
+      echo $status_rp;
+      echo $status_dk;
 ?>
 <div class="container my-4">
         <h2 class="text-center"><?= $data['cp']['nama'] ?> <?= $data['cp']['nip'] ?></h2>
@@ -47,14 +49,14 @@
         <div class="list-group mt-5">
 
             <p  class="list-group-item list-group-item-action">
-                DPCP 
+                DPCP <a href="<?= BASEURL ?>/Detail/setujui/". <?= $data['cp']['nip'] ?>><button class="btn btn-success">Setujui</button></a>
             </p>
             
             <p  class="list-group-item list-group-item-action">
-                Daftar Keluarga
+                Daftar Keluarga <a href="<?= BASEURL ?>/Detail/setujui/". <?= $status_rp ?>><button class="btn btn-success">Setujui</button></a>
             </p>
             <p  class="list-group-item list-group-item-action">
-                Riwayat Pekerjaan <a href="<?= BASEURL ?>/Detail/setujui/". <?= $data['cp']['nip'] ?>><button class="btn btn-success">Setujui</button></a>
+                Riwayat Pekerjaan <a href="<?= BASEURL ?>/Detail/setujui/". <?= $status_rp ?>><button class="btn btn-success">Setujui</button></a>
             </p>
         </div>
     </div>
