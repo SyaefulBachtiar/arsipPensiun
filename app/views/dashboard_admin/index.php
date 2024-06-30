@@ -5,7 +5,8 @@
 </div>
 
 <?php $nip = isset($data['cp']['nip']) ? $data['cp']['nip'] : '0'; 
-echo $nip;
+    $_SESSION['nip'] = $nip;
+    var_dump($_SESSION['nip']);
 ?>
   <!-- Main Content -->
   <div class="container my-5">
