@@ -3,6 +3,10 @@
         <?php Flasher::flash_login(); ?>
     </div>
 </div>
+
+<?php $nip = isset($data['cp']['nip']) ? $data['cp']['nip'] : '0'; 
+echo $nip;
+?>
   <!-- Main Content -->
   <div class="container my-5">
         <h1 class="mb-4">Dashboard/Admin</h1>

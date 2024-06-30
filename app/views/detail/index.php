@@ -35,13 +35,14 @@
         <div class="list-group mt-5">
 
             <p  class="list-group-item list-group-item-action">
-                DPCP
+                DPCP 
             </p>
+            
             <p  class="list-group-item list-group-item-action">
                 Daftar Keluarga
             </p>
             <p  class="list-group-item list-group-item-action">
-                Riwayat Pekerjaan
+                Riwayat Pekerjaan <a href="<?= BASEURL ?>/Detail/setujui"><button class="btn btn-success">Setujui</button></a>
             </p>
         </div>
     </div>
