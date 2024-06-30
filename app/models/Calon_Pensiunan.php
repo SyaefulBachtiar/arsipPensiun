@@ -98,7 +98,7 @@ class Calon_Pensiunan {
 
     // input riwayat pekerjaan
     public function input_riwayatPekerjaan ($data){
-        $query = "INSERT INTO tbl_riwayatpekerjaan VALUES (:id_riwayatpkerjaan, :nip_terkait, :uraian_riwayatpekerjaan, :mulai, :sampai, :pangkat_gol_ruang, :gaji, :sk_pejabat, :sk_nomor, :sk_tanggla)";
+        $query = "INSERT INTO tbl_riwayatpekerjaan VALUES (:id_riwayatpkerjaan, :nip_terkait, :uraian_riwayatpekerjaan, :mulai, :sampai, :pangkat_gol_ruang, :gaji, :sk_pejabat, :sk_nomor, :sk_tanggla, NULL)";
 
 
         $this->db->query($query);
@@ -122,7 +122,7 @@ class Calon_Pensiunan {
     // input daftar keluarga
     public function input_daftarKeluarga($data){
 
-        $query = "INSERT INTO tbl_daftarkeluarga VALUES (:id_anggota_keluarga, :nip_terkait, :nama, :hubungan_keluarga, :tanggal_lahir, :pekerjaan_sekolah, :tanggla_perkawinan, :keterangan)";
+        $query = "INSERT INTO tbl_daftarkeluarga VALUES (:id_anggota_keluarga, :nip_terkait, :nama, :hubungan_keluarga, :tanggal_lahir, :pekerjaan_sekolah, :tanggla_perkawinan, :keterangan, NULL)";
 
         $this->db->query($query);
         $this->db->bind('id_anggota_keluarga', $data['id_anggota_keluarga']);
