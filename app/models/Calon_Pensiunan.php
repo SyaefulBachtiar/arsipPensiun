@@ -64,7 +64,7 @@ class Calon_Pensiunan {
 
     // input_dpcp
     public function input_dpcp($data){
-        $query = "INSERT INTO tbl_data_cp VALUES (:nip, :nama, :lahir_tempat, :lahir_tgl, :gender, :status_kawin, :pendidikan_jenjang,:pendidikan_jurusan, :pendidikan_tahunlulus, :no_karpeg, :jabatan, :pangkat_gol_ruang, :tmt, :unit_organisasi,:masa_kerja_golongan_dlm_bulan, :masa_kerja_golongan_tgl, :masa_kerja_pensiun_dlm_bulan, :masa_kerja_pensiun_tgl,:masa_kerja_sebelum_pns_start, :masa_kerja_sebelum_pns_end, :gaji_pokok_terakhir, :tanggal_masuk_pns, :status_rp)";
+        $query = "INSERT INTO tbl_data_cp VALUES (:nip, :nama, :lahir_tempat, :lahir_tgl, :gender, :status_kawin, :pendidikan_jenjang,:pendidikan_jurusan, :pendidikan_tahunlulus, :no_karpeg, :jabatan, :pangkat_gol_ruang, :tmt, :unit_organisasi,:masa_kerja_golongan_dlm_bulan, :masa_kerja_golongan_tgl, :masa_kerja_pensiun_dlm_bulan, :masa_kerja_pensiun_tgl,:masa_kerja_sebelum_pns_start, :masa_kerja_sebelum_pns_end, :gaji_pokok_terakhir, :tanggal_masuk_pns, NULL)";
 
         $this->db->query($query);
         $this->db->bind('nip', $data['nip']);
@@ -89,7 +89,7 @@ class Calon_Pensiunan {
         $this->db->bind('masa_kerja_sebelum_pns_end', $data['masa_kerja_sebelum_pns_end']);
         $this->db->bind('gaji_pokok_terakhir', $data['gaji_pokok_terakhir']);
         $this->db->bind('tanggal_masuk_pns', $data['tanggal_masuk_pns']);
-        $this->db->bind('status_rp', $data['status_rp']);
+
 
         $this->db->execute();
 
