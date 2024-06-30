@@ -15,7 +15,7 @@ $status_rp = isset($rp[0]['status_rp']) ? $rp[0]['status_rp'] : '0';
 echo $data['cp']['nip'];
 echo "<br";
 echo $status_dk;
-echo "<br";
+echo "<br>";
 echo $status_rp;
 
    
