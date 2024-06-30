@@ -98,7 +98,7 @@ class Calon_Pensiunan {
 
     // input riwayat pekerjaan
     public function input_riwayatPekerjaan ($data){
-        $query = "INSERT INTO tbl_riwayatpekerjaan VALUES (:id_riwayatpkerjaan, :nip_terkait, :uraian_riwayatpekerjaan, :mulai, :sampai, :pangkat_gol_ruang, :gaji, :sk_pejabat, :sk_nomor, :sk_tanggla)";
+        $query = "INSERT INTO tbl_riwayatpekerjaan VALUES (:id_riwayatpkerjaan, :nip_terkait, :uraian_riwayatpekerjaan, :mulai, :sampai, :pangkat_gol_ruang, :gaji, :sk_pejabat, :sk_nomor, :sk_tanggla, 0)";
 
 
         $this->db->query($query);
@@ -112,6 +112,7 @@ class Calon_Pensiunan {
         $this->db->bind('sk_pejabat', $data['sk_pejabat']);
         $this->db->bind('sk_nomor', $data['sk_nomor']);
         $this->db->bind('sk_tanggla', $data['sk_tanggla']);
+        
 
         $this->db->execute();
 
