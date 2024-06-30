@@ -13,7 +13,7 @@ $rp = $data['cp']['riwayat_pekerjaan'];
 $status_dk = isset($dk[0]['status_dk']) ? $dk[0]['status_dk'] : '0';
 $status_rp = isset($rp[0]['status_rp']) ? $rp[0]['status_rp'] : '0';
 echo $data['cp']['nip'];
-echo "<br";
+echo "<br>";
 echo $status_dk;
 echo "<br>";
 echo $status_rp;
@@ -53,7 +53,7 @@ echo $status_rp;
         <div class="list-group mt-5">
 
             <p  class="list-group-item list-group-item-action">
-                DPCP <a href="<?= BASEURL ?>/Detail/setujui/"<?= $data['cp']['nip'] ?>><button class="btn btn-success">Setujui</button></a>
+                DPCP <a href="<?= BASEURL ?>/Detail/setujui/<?= $data['cp']['nip'];?>"><button class="btn btn-success">Setujui</button></a>
             </p>
             
             <p  class="list-group-item list-group-item-action">
