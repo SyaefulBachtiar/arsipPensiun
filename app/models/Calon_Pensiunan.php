@@ -163,7 +163,7 @@ class Calon_Pensiunan {
     
     public function ubah_status_dua($id_anggota_keluarga) {
         try {
-            $query = "UPDATE tbl_daftarkeluarga SET status_rp = 25 WHERE id_anggota_keluarga = :id_anggota_keluarga";
+            $query = "UPDATE tbl_daftarkeluarga SET status_dk = 25 WHERE id_anggota_keluarga = :id_anggota_keluarga";
     
             $this->db->query($query);
             $this->db->bind(':id_anggota_keluarga', $id_anggota_keluarga);
@@ -183,7 +183,7 @@ class Calon_Pensiunan {
 
     public function ubah_status_tiga($nip) {
         try {
-            $query = "UPDATE tbl_data_cp SET status_rp = 25 WHERE nip = :nip";
+            $query = "UPDATE tbl_data_cp SET status= 25 WHERE nip = :nip";
     
             $this->db->query($query);
             $this->db->bind(':nip', $nip);
