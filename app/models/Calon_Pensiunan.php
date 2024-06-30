@@ -143,15 +143,22 @@ class Calon_Pensiunan {
     }
 
     public function ubah_status($id_riwayatpkerjaan) {
-    $query = "UPDATE tbl_riwayatpekerjaan SET status_rp = 25 WHERE id_riwayatpkerjaan = :id_riwayatpekerjaan";
-
-    $this->db->query($query);
-    $this->db->bind('id_riwayatpkerjaan', $id_riwayatpkerjaan);
-
-    $this->db->execute();
-
-    return $this->db->rowCount();
+        try {
+            $query = "UPDATE tbl_riwayatpekerjaan SET status_rp = 25 WHERE id_riwayatpkerjaan = :id_riwayatpkerjaan";
+    
+            $this->db->query($query);
+            $this->db->bind(':id_riwayatpkerjaan', $id_riwayatpkerjaan);
+    
+            $this->db->execute();
+    
+            return $this->db->rowCount();
+        } catch (PDOException $e) {
+            // Tampilkan pesan error jika terjadi masalah
+            echo 'Error: ' . $e->getMessage();
+            return 0; // Atau nilai lain yang sesuai untuk menandakan kegagalan
+        }
     }
+    
 
 
 
