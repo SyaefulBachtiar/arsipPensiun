@@ -9,12 +9,13 @@
 $dk = $data['cp']['daftar_keluarga']; 
 $rp = $data['cp']['riwayat_pekerjaan'];
 
-
+$status_cp = $data['cp']['nip'];
 $status_dk = isset($dk[0]['id_anggota_keluarga']) ? $dk[0]['id_anggota_keluarga'] : '0';
 $status_rp = isset($rp[0]['id_riwayatpkerjaan']) ? $rp[0]['id_riwayatpkerjaan'] : '0';
 $ss_dk = isset($dk[0]['status_dk']) ? $dk[0]['status_dk'] : '0';
 $ss_rp = isset($rp[0]['status_rp']) ? $rp[0]['status_rp'] : '0';
 $ss_cp = $data['cp']['status'];
+
 
 
    
@@ -52,7 +53,7 @@ $ss_cp = $data['cp']['status'];
         <div class="list-group mt-5">
 
             <p  class="list-group-item list-group-item-action">
-                DPCP <a href="<?= BASEURL ?>/Detail/setujui/<?php if($ss_cp === 0) echo "<a href='". BASEURL."/Detail/setujui".$data['cp']['nip']."'><button class='btn btn-primary'>Setujui</button></a>" ?>
+                DPCP <a href="<?= BASEURL ?>/Detail/setujui/<?php if($ss_cp === 0) echo "<a href='". BASEURL."/Detail/setujui".$status_cp."'><button class='btn btn-primary'>Setujui</button></a>" ?>
             </p>
             
             <p  class="list-group-item list-group-item-action">
