@@ -53,14 +53,14 @@ $ss_cp = $data['cp']['status'];
         <div class="list-group mt-5">
 
             <p  class="list-group-item list-group-item-action">
-                DPCP <?php if($ss_cp === 0) echo "<a href='". BASEURL."/Detail/setujui".$status_cp."'><button class='btn btn-primary'>Setujui</button></a>" ?>
+                DPCP <?php if($ss_cp === 0) echo "<a href='". BASEURL."/Detail/setujui/".$status_cp."'><button class='btn btn-primary'>Setujui</button></a>" ?>
             </p>
             
             <p  class="list-group-item list-group-item-action">
-                Daftar Keluarga <?php if($ss_dk === 0) echo "<a href='". BASEURL."/Detail/setujui".$status_dk."'><button class='btn btn-primary'>Setujui</button></a>" ?>
+                Daftar Keluarga <?php if($ss_dk === 0) echo "<a href='". BASEURL."/Detail/setujui/".$status_dk."'><button class='btn btn-primary'>Setujui</button></a>" ?>
             </p>
             <p  class="list-group-item list-group-item-action">
-                Riwayat Pekerjaan <?php if($ss_rp === 0) echo "<a href='". BASEURL."/Detail/setujui".$status_rp."'><button class='btn btn-primary'>Setujui</button></a>" ?>
+                Riwayat Pekerjaan <?php if($ss_rp === 0) echo "<a href='". BASEURL."/Detail/setujui/".$status_rp."'><button class='btn btn-primary'>Setujui</button></a>" ?>
             </p>
         </div>
     </div>
